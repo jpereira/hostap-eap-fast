@@ -465,6 +465,9 @@ eap {
 		#
 		#	cipher_list = "DEFAULT@SECLEVEL=1"
 		#
+
+		cipher_list = "DEFAULT@SECLEVEL=1"
+
 		#  The values must be in quotes.
 		#
 		#  We also STRONGLY RECOMMEND to set
@@ -485,7 +488,7 @@ eap {
 		#  Other versions of EAP (PEAP, TTLS, FAST) DO NOT
 		#  SUPPORT TLS 1.3.
 		#
-		tls_min_version = "1.2"
+		tls_min_version = "1.0"
 		tls_max_version = "1.2"
 
 		#  Elliptical cryptography configuration

@@ -131,13 +131,17 @@ EXPOSE 1812/udp 1812/tcp 1813/udp 1813/tcp 3799/udp
 #
 #	Setup basic FreeRADIUS + EAP-FAST
 #
-COPY config/eap /etc/freeradius/mods-config/eap
+COPY config/eap /etc/freeradius/mods-available/eap
 COPY config/authorize /etc/freeradius/mods-config/files/authorize
-COPY config/test-eap-fast.conf /root/test-eap-fast.conf
+
+# eapol_test samples
+COPY config/eap-fast-tls-1.0.conf /root/eap-fast-tls-1.0.conf
+COPY config/eap-fast-tls-1.1.conf /root/eap-fast-tls-1.1.conf
+COPY config/eap-fast-tls-1.2.conf /root/eap-fast-tls-1.2.conf
 
 #
 #   Default HOME
 #
 WORKDIR /root
 
-CMD ["freeradius", "-Xx"]
+CMD ["freeradius", "-Xx", "-l", "/var/log/radiusd.log"]
