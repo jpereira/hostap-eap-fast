@@ -108,11 +108,6 @@ RUN git clone http://w1.fi/hostap.git
 WORKDIR hostap
 RUN curl -o wpa_supplicant/.config https://raw.githubusercontent.com/FreeRADIUS/freeradius-server/v3.0.x/scripts/ci/eapol_test/config_linux
 
-# Build /usr/local/bin/eapol_test-2.9
-RUN git checkout hostap_2_9 && \
-	make -C wpa_supplicant/ -j8 eapol_test && \
-	cp -f wpa_supplicant/eapol_test /usr/local/bin/eapol_test-2.9
-
 # Build /usr/local/bin/eapol_test-2.10
 RUN git checkout hostap_2_10 && \
 	make -C wpa_supplicant/ -j8 eapol_test && \

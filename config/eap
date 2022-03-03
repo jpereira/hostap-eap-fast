@@ -401,7 +401,8 @@ eap {
 		#  TLS cipher suites.  The format is listed
 		#  in "man 1 ciphers".
 		#
-		cipher_list = "DEFAULT"
+#		cipher_list = "DEFAULT@SECLEVEL=1"
+
 
 		#  If enabled, OpenSSL will use server cipher list
 		#  (possibly defined by cipher_list option above)
@@ -1081,6 +1082,7 @@ eap {
 		#  recommended "ALL:!EXPORT:!eNULL:!SSLv2" is used
 		#
 		cipher_list = "ALL:!EXPORT:!eNULL:!SSLv2"
+#		cipher_list = "ALL:!EXPORT:!eNULL:!SSLv2:DEFAULT@SECLEVEL=1"
 
 		#  PAC lifetime in seconds (default: seven days)
 		#
